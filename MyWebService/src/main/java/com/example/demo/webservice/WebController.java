@@ -14,6 +14,7 @@ public class WebController {
 	
 	@GetMapping("/")
 	public String main(Model model) {
+		System.out.println("WebController main activated");
 		model.addAttribute("posts",postsService.findAllDesc());
 		return "main";
 	}

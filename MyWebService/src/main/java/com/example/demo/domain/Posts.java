@@ -52,11 +52,30 @@ public class Posts extends BaseTimeEntity{
 	
 	private String author;
 	
-	
 	@Builder
 	public Posts(String title, String content, String author) {
 		this.title = title;
 		this.content = content;
 		this.author = author;
 	}
+	
+	@Builder
+	public Posts(Long id) {
+		this.id = id;
+	}
+	
+	@Builder
+	public Posts(Long id, String content, String author, String title) {
+		this.id = id;
+		this.content = content;
+		this.title = title;
+		this.author = author;
+	}
+
+	@Override
+	public String toString() {
+		return "Posts [id=" + id + ", title=" + title + ", content=" + content + ", author=" + author + "]";
+	}
+	
+	
 }

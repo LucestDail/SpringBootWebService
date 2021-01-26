@@ -18,11 +18,19 @@ public class PostsService {
 	
 	@Transactional
 	public Long save(PostsSaveRequestDto dto) {
+		System.out.println("PostsService.save activated");
 		return postsRepository.save(dto.toEntity()).getId();
+	}	
+	
+	@Transactional
+	public void update(PostsUpdateRequestDto dto) {
+		System.out.println("PostsService update activated -> " + dto);
+		postsRepository.update(dto.getId(), dto.getAuthor(), dto.getContent(), dto.getTitle());
 	}
 	
 	@Transactional(readOnly = true)
 	public List<PostsMainResponseDto> findAllDesc(){
+		System.out.println("PostsService findAllDesc activated");
 		return postsRepository.findAllDesc().map(PostsMainResponseDto::new).collect(Collectors.toList());
 	}
 }
