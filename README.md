@@ -22,15 +22,15 @@ web service application using aws, springboot, few api
 Key features include:
     
 - Board
-    * Creating board information to db for writing information service.
-    * Read board information from db for reading board service.
-    * Update board information to db for change board information service, recommand, ano so on.
-    * delete board information to db for exit this service
+    * Creating board from h2db for writing.
+    * Read board information from h2db for reading.
+    * Update board information to h2db for change board information.
+    * delete board information to h2db for delete information.
 
 The following issue were fixed:
 
 - Ver.1.0
-    * Comment identification number overlaping issue
+    * maven test error has been updated
 
 
 ## Issue
