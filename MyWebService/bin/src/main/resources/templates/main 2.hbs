@@ -7,12 +7,12 @@
 
     <!--부트스트랩 css 추가-->
     <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/lib/style.css">
 </head>
 <body>
     <h1>스프링부트로 게시판 만들어보는중...</h1>
     <div class="col-md-12">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal">글 등록</button>
+        
         <br/>
         <br/>
         <!-- 목록 출력 영역 -->
@@ -28,7 +28,7 @@
             </thead>
             <tbody id="tbody">
             {{#each posts}}
-                <tr class="menuselect">
+                <tr>
                     <td>{{id}}</td>
                     <td>{{title}}</td>
                     <td>{{author}}</td>
@@ -36,14 +36,11 @@
                     <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deletePostsModal" onclick="javascript:document.getElementById('deleteid').value='{{id}}'">삭제</button>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updatePostsModal" onclick="javascript:document.getElementById('updateid').value='{{id}}'">수정</button></td>
                 </tr>
-                <tr class="hide">
-                    <td colspan="5">content : {{content}}</td>
-                </tr>
             {{/each}}
             </tbody>
         </table>
     </div>
-    <input type = "hidden" value = "0">
+
     <!-- Modal 영역 -->
     <!--삭제 모달 -->
      <div class="modal fade" id="deletePostsModal" tabindex="-1" role="dialog" aria-labelledby="deletePostsLabel" aria-hidden="true">
@@ -145,6 +142,6 @@
 
     <!--custom js 추가-->
     <script src="/js/app/maintest.js"></script>
-    <script src="/js/app/stylejs.js"></script>
+
 </body>
 </html>
