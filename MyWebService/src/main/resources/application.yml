@@ -7,12 +7,13 @@ spring:
 spring:
   profiles: local
   datasource:
+    url: jdbc:mariadb://webservice.ce5zdjsnjhyy.ap-northeast-2.rds.amazonaws.com:3306/mydatabase
+    username: admin
+    password: admin1234
+    driver-class-name: org.mariadb.jdbc.Driver
     data: classpath:data-h2.sql
   jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
     hibernate:
       ddl-auto: create-drop
-  h2:
-    console:
-      enabled: true
-    
